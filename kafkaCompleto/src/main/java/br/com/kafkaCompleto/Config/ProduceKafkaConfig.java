@@ -46,7 +46,22 @@ public class ProduceKafkaConfig {
     // Metodos para criar novos topicos
     @Bean
     public NewTopic topic1(){
+        //retorna as partiços e as replicas
         return new NewTopic("topic-1", 10, Short.valueOf("1"));
+
+        //A partir da versão 2.6 do spring kafka é permitido retornar o que esta configurado no broken
+        //  return TopicBuilder.name("topic-1").build();
     }
 
+    //A partir da versão 2.7 do spring kafka é permitido cria varios topicos na mesma ben
+    /*
+    @Bean
+    public KafkaAdmin.NewTopics topics(){
+        return new KafkaAdmin.NewTopics(
+           TopicBuilder.name("topic-1").build(),
+           TopicBuilder.name("topic-2").build(),
+           TopicBuilder.name("topic-3").build()
+        );
+    }
+*/
 }

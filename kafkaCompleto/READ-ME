@@ -1,0 +1,27 @@
+--------------------------Comomandos--kafkas--------------------------------
+
+	//para iniciar o zookeeper
+ zookeeper-server-start.bat C:\kafka\config\zookeeper.properties
+
+	//para iniciar o kafka
+ kafka-server-start.bat C:\kafka\config\server.properties
+
+	//para listar o numero de topicos
+ kafka-topics --boostrap-server localhost:9092 --list
+
+	//para descrever os topicos
+ kafka-topics --boostrap-server localhost:9092 --describe
+
+	//para criar um topico
+ kafka-topics --boostrap-server localhost:9092 --create --topic teste
+
+	//para adicionar partições
+ kafka-topics --boostrap-server localhost:9092 --alter --topic teste --partitions 10
+
+-------------------------------------------//--------------------------------------
+	//para criar um produder chave/valor
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic teste --property "parse.key=true" --property "key.separator=,"
+
+
+	//para criar grupos de consumer
+ kafka-console-consumer --bootstrap-server 127.0.01:9092 --topic teste --property "print.key=true"  --property "key.separator=," --group

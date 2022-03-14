@@ -1,13 +1,13 @@
-package br.com.kafkaCompleto;
+package br.com.consumer2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaCompletoApplication {
+public class Consumer2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaCompletoApplication.class, args);
+		SpringApplication.run(Consumer2Application.class, args);
 	}
 
 }
